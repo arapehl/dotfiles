@@ -68,7 +68,7 @@ set tabstop=2
 set noswapfile
 
 " Sets the shell bin and rcfile
-set shell=/bin/bash\ --rcfile\ ~/.bashrc\ -i
+set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
 
 " Set a var to check when building the bash prompt in order to 
 " notify whether or not bash is running under vim or not
