@@ -1,7 +1,6 @@
 #!/bin/bash
-alias ls="ls -lahG"
-alias vg="vagrant"
-alias v='vim -p $(git ls-files -m)'
+
+alias be="bundle exec"
 alias ga='git add'                                                                                                                                                                   
 alias gb='git branch'
 alias gc='git commit'
@@ -10,7 +9,11 @@ alias gd='git diff'
 alias gp='git push'
 alias gr='git rebase'
 alias gs='git status'
+alias ls="ls -lahG"
+alias v='vim -p $(git ls-files -m)'
+alias vg="vagrant"
 alias vssh='cd ~/dev/work/vagrant; vagrant ssh'
+
 V=""
 if [[ $UNDER_VIM = "yes" ]]; then
   V="\[\e[1;31m\][UNDER VIM]\[\033[00m\] "
