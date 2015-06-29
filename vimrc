@@ -114,7 +114,7 @@ map <leader>[ :tabp<CR>
 map <leader>] :tabn<CR>
 
 " CtrlP
-map <leader>, :CtrlP<cr>
+map <leader>, :tabe<cr>:CtrlP<cr>
 
 " Easier start & end of line
 noremap H ^
