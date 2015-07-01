@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias b="bundle"
 alias be="bundle exec"
 alias ga='git add'                                                                                                                                                                   
 alias gb='git branch'
