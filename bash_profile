@@ -2,6 +2,7 @@
 
 alias b="bundle"
 alias be="bundle exec"
+alias bo="bundle open"
 alias ga='git add'                                                                                                                                                                   
 alias gb='git branch'
 alias gc='git commit'
@@ -9,6 +10,7 @@ alias gcm='git commit -m'
 alias gco='git checkout'
 alias gd='git diff'
 alias gg='git grep'
+alias gl='git log'
 alias gp='git push'
 alias gr='git rebase'
 alias gs='git status'
