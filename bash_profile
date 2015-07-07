@@ -26,13 +26,19 @@ if [[ $UNDER_VIM = "yes" ]]; then
   V="\[\e[1;31m\][UNDER VIM]\[\033[00m\] "
 fi
 
-export PS1=$V"[\h] \W\\$ "
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin
+export EDITOR=vim
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PS1=$V"[\h] \W\\$ "
 
 #opt into pry
 export PRY=1
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
@@ -41,7 +47,3 @@ if [ -f ~/.custom_git_completion ]; then
   . ~/.custom_git_completion
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
