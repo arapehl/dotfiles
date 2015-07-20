@@ -2,6 +2,7 @@
 
 alias b="bundle"
 alias be="bundle exec"
+alias bi="bundle install --jobs 4"
 alias bo="bundle open"
 alias ga='git add'                                                                                                                                                                   
 alias gb='git branch'
@@ -19,7 +20,7 @@ alias rd="bundle exec rails dbconsole"
 alias rdb="bundle exec rails dbconsole"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
-alias v='vim -p $(git ls-files -m)'
+alias v='vim -p $(git ls-files -m --others --exclude-standard)'
 alias vg="vagrant"
 alias vssh='cd ~/dev/work/vagrant; vagrant ssh'
 
