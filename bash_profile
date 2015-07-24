@@ -2,6 +2,7 @@
 
 alias b="bundle"
 alias be="bundle exec"
+alias best="bundle exec spring testunit"
 alias bi="bundle install --jobs 4"
 alias bo="bundle open"
 alias ga='git add'                                                                                                                                                                   
