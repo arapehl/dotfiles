@@ -47,7 +47,29 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-PS1=$V'[\h] \w$(__git_ps1 " (%s)")\$ '
+prompt () {
+  # Colours
+  local BLACK="\[\033[0;30m\]"
+  local BLUE="\[\033[0;34m\]"
+  local LIGHT_BLUE="\[\033[1;34m\]"
+  local GREEN="\[\033[0;32m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
+  local CYAN="\[\033[0;36m\]"
+  local LIGHT_CYAN="\[\033[1;36m\]"
+  local RED="\[\033[0;31m\]"
+  local LIGHT_RED="\[\033[1;31m\]"
+  local PURPLE="\[\033[0;35m\]"
+  local LIGHT_PURPLE="\[\033[1;35m\]"
+  local BROWN="\[\033[0;33m\]"
+  local YELLOW="\[\033[1;33m\]"
+  local LIGHT_GRAY="\[\033[0;37m\]"
+  local DARK_GRAY="\[\033[1;30m\]"
+  local WHITE="\[\033[1;37m\]"
+  local NO_COLOUR="\[\033[0m\]"
+
+  PS1=$LIGHT_GRAY$V'[\h] \w$(__git_ps1 " (%s)")\$ '$NO_COLOUR
+}
+prompt
 
 #opt into pry
 export PRY=1
