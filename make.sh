@@ -1,6 +1,6 @@
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="bash_profile bashrc vimrc custom_git_completion git-completion.bash"
+files="bash_profile bashrc vimrc custom_git_completion git-completion.bash git-prompt.sh"
 mkdir -p $olddir
 for file in $files; do
   echo $file

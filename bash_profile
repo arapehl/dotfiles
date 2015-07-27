@@ -1,5 +1,15 @@
 #!/bin/bash
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+if [ -f ~/.custom_git_completion ]; then
+  . ~/.custom_git_completion
+fi
+if [ -f ~/.git-prompt.sh ]; then
+  . ~/.git-prompt.sh
+fi
+
 alias b="bundle"
 alias be="bundle exec"
 alias best="bundle exec spring testunit"
@@ -37,17 +47,9 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PS1=$V"[\h] \W\\$ "
+PS1=$V"[\h] \w$(__git_ps1)\$ "
 
 #opt into pry
 export PRY=1
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
-if [ -f ~/.custom_git_completion ]; then
-  . ~/.custom_git_completion
-fi
-
