@@ -67,7 +67,9 @@ prompt () {
   local WHITE="\[\033[1;37m\]"
   local NO_COLOUR="\[\033[0m\]"
 
-  PS1=$LIGHT_GRAY$V'[\h] \w$(__git_ps1 " (%s)")\$ '$NO_COLOUR
+  #PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "       
+
+  PS1=$V$WHITE'[\h] '$CYAN'\w'$GREEN'$(__git_ps1 " (%s)")'$NO_COLOUR'\$ '
 }
 prompt
 
