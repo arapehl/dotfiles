@@ -47,7 +47,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-PS1=$V"[\h] \w$(__git_ps1)\$ "
+PS1=$V'[\h] \w$(__git_ps1 " (%s)")\$ '
 
 #opt into pry
 export PRY=1
