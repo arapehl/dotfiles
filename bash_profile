@@ -69,7 +69,7 @@ prompt () {
 
   [[ $HOSTNAME == "GLaDOS.local" ]] && IDENT=$RED"[\h]" || IDENT=$GREEN"[\h]"
 
-  PS1=$VIMCHECK$IDENT$LIGHT_GRAY' \w'$BROWN'$(__git_ps1 " (%s)")'$NO_COLOUR' \$ '
+  PS1=$VIMCHECK$IDENT$LIGHT_GRAY' \w'$BROWN'$(__git_ps1 ":%s")'$NO_COLOUR' \$ '
 }
 prompt
 
