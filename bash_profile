@@ -50,26 +50,26 @@ export PATH="/usr/local/heroku/bin:$PATH"
 prompt () {
   # Colours
   local BLACK="\[\033[0;30m\]"
-  local BLUE="\[\033[0;34m\]"
-  local LIGHT_BLUE="\[\033[1;34m\]"
-  local GREEN="\[\033[0;32m\]"
-  local LIGHT_GREEN="\[\033[1;32m\]"
-  local CYAN="\[\033[0;36m\]"
-  local LIGHT_CYAN="\[\033[1;36m\]"
+  local DARK_GRAY="\[\033[1;30m\]"
   local RED="\[\033[0;31m\]"
   local LIGHT_RED="\[\033[1;31m\]"
-  local PURPLE="\[\033[0;35m\]"
-  local LIGHT_PURPLE="\[\033[1;35m\]"
+  local GREEN="\[\033[0;32m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
   local BROWN="\[\033[0;33m\]"
   local YELLOW="\[\033[1;33m\]"
+  local BLUE="\[\033[0;34m\]"
+  local LIGHT_BLUE="\[\033[1;34m\]"
+  local PURPLE="\[\033[0;35m\]"
+  local LIGHT_PURPLE="\[\033[1;35m\]"
+  local CYAN="\[\033[0;36m\]"
+  local LIGHT_CYAN="\[\033[1;36m\]"
   local LIGHT_GRAY="\[\033[0;37m\]"
-  local DARK_GRAY="\[\033[1;30m\]"
   local WHITE="\[\033[1;37m\]"
   local NO_COLOUR="\[\033[0m\]"
 
   #PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "       
 
-  PS1=$V$WHITE'[\h] '$CYAN'\w'$GREEN'$(__git_ps1 " (%s)")'$NO_COLOUR'\$ '
+  PS1=$V$GREEN'[\h] '$LIGHT_GRAY'\w'$BROWN'$(__git_ps1 " (%s)")'$NO_COLOUR'\$ '
 }
 prompt
 
