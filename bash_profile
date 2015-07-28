@@ -35,11 +35,6 @@ alias v='vim -p $(git ls-files -m --others --exclude-standard)'
 alias vg="vagrant"
 alias vssh='cd ~/dev/work/vagrant; vagrant ssh'
 
-V=""
-if [[ $UNDER_VIM = "yes" ]]; then
-  V="\[\e[1;31m\][UNDER VIM]\[\033[00m\] "
-fi
-
 export EDITOR=vim
 
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin
@@ -67,11 +62,17 @@ prompt () {
   local WHITE="\[\033[1;37m\]"
   local NO_COLOUR="\[\033[0m\]"
 
-  #PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "       
+  VIMCHECK=""
+  if [[ $UNDER_VIM = "yes" ]]; then
+    VIMCHECK="$RED[UNDER VIM]"
+  fi
 
-  PS1=$V$GREEN'[\h] '$LIGHT_GRAY'\w'$BROWN'$(__git_ps1 " (%s)")'$NO_COLOUR'\$ '
+  [[ $HOSTNAME == "GLaDOS.local" ]] && IDENT=$RED"[\h]" || IDENT=$GREEN"[\h]"
+
+  PS1=$VIMCHECK$IDENT$LIGHT_GRAY' \w'$BROWN'$(__git_ps1 " (%s)")'$NO_COLOUR' \$ '
 }
 prompt
+
 
 #opt into pry
 export PRY=1
