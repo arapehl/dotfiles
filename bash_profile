@@ -1,13 +1,17 @@
 #!/bin/bash
 
 if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+  source ~/.git-completion.bash
 fi
+
 if [ -f ~/.custom_git_completion ]; then
-  . ~/.custom_git_completion
+  source ~/.custom_git_completion
 fi
-if [ -f ~/.git-prompt.sh ]; then
-  . ~/.git-prompt.sh
+
+# https://github.com/magicmonty/bash-git-prompt
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+  GIT_PROMPT_THEME=Single_line
+  source ~/.bash-git-prompt/gitprompt.sh
 fi
 
 alias b="bundle"
@@ -64,12 +68,13 @@ prompt () {
 
   VIMCHECK=""
   if [[ $UNDER_VIM = "yes" ]]; then
-    VIMCHECK="$RED[UNDER VIM]"
+    VIMCHECK="$LIGHT_RED[UNDER VIM]"
   fi
 
-  [[ $HOSTNAME == "GLaDOS.local" ]] && IDENT=$RED"[\h]" || IDENT=$GREEN"[\h]"
+  [[ $HOSTNAME == "GLaDOS.local" ]] && IDENT=$LIGHT_RED"[\h]" || IDENT=$GREEN"[\h]"
 
-  PS1=$VIMCHECK$IDENT$LIGHT_GRAY' \w'$BROWN'$(__git_ps1 ":%s")'$NO_COLOUR' \$ '
+  #PS1=$VIMCHECK$IDENT$LIGHT_GRAY' \w'$BROWN'$(__git_ps1 ":%s")'$NO_COLOUR' \$ '
+  GIT_PROMPT_START=$VIMCHECK$IDENT$NO_COLOUR' \w'
 }
 prompt
 
