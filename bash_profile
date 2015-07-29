@@ -1,19 +1,5 @@
 #!/bin/bash
 
-if [ -f ~/.git-completion.bash ]; then
-  source ~/.git-completion.bash
-fi
-
-if [ -f ~/.custom_git_completion ]; then
-  source ~/.custom_git_completion
-fi
-
-# https://github.com/magicmonty/bash-git-prompt
-if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
-  GIT_PROMPT_THEME=Single_line
-  source ~/.bash-git-prompt/gitprompt.sh
-fi
-
 alias b="bundle"
 alias be="bundle exec"
 alias best="bundle exec spring testunit"
@@ -46,7 +32,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-prompt () {
+prompt_callback() {
   # Colours
   local BLACK="\[\033[0;30m\]"
   local DARK_GRAY="\[\033[1;30m\]"
@@ -66,20 +52,35 @@ prompt () {
   local WHITE="\[\033[1;37m\]"
   local NO_COLOUR="\[\033[0m\]"
 
-  VIMCHECK=""
-  if [[ $UNDER_VIM = "yes" ]]; then
-    VIMCHECK="$LIGHT_RED[UNDER VIM]"
-  fi
+  # Are we under vim?
+  [[ $UNDER_VIM = "yes" ]] && VIMCHECK="$LIGHT_RED[UNDER VIM]" || VIMCHECK=""
 
-  [[ $HOSTNAME == "GLaDOS.local" ]] && IDENT=$LIGHT_RED"[\h]" || IDENT=$GREEN"[\h]"
+  # Are we in a repo that should be running under vagrant?
+  [[ ! $HOSTNAME =~ "vagrant" && $PWD =~ "vagrant" ]] && IDENT=$LIGHT_RED || IDENT=$GREEN
 
-  #PS1=$VIMCHECK$IDENT$LIGHT_GRAY' \w'$BROWN'$(__git_ps1 ":%s")'$NO_COLOUR' \$ '
-  GIT_PROMPT_START=$VIMCHECK$IDENT$NO_COLOUR' \w'
+  # Set prompt
+  #GIT_PROMPT_START=$VIMCHECK$IDENT$NO_COLOUR' \w'
+  echo $VIMCHECK$IDENT' \w'$NO_COLOUR
 }
-prompt
-
 
 #opt into pry
 export PRY=1
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
+fi
+
+if [ -f ~/.custom_git_completion ]; then
+  source ~/.custom_git_completion
+fi
+
+# https://github.com/magicmonty/bash-git-prompt
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+  GIT_PROMPT_FETCH_REMOTE_STATUS=0
+  GIT_PROMPT_START="\[\033[0m\]"
+  GIT_PROMPT_THEME=Single_line
+  source ~/.bash-git-prompt/gitprompt.sh
+fi
+
