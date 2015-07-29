@@ -78,7 +78,7 @@ fi
 
 # https://github.com/magicmonty/bash-git-prompt
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
-  GIT_PROMPT_FETCH_REMOTE_STATUS=0
+  #GIT_PROMPT_FETCH_REMOTE_STATUS=0
   GIT_PROMPT_START="\[\033[0m\]"
   GIT_PROMPT_THEME=Single_line
   source ~/.bash-git-prompt/gitprompt.sh
