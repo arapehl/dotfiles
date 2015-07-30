@@ -56,7 +56,7 @@ prompt_callback() {
   [[ $UNDER_VIM = "yes" ]] && VIMCHECK="$LIGHT_RED[UNDER VIM]" || VIMCHECK=""
 
   # Are we in a repo that should be running under vagrant?
-  [[ ! $HOSTNAME =~ "vagrant" && $PWD =~ "vagrant" ]] && IDENT=$LIGHT_RED || IDENT=$GREEN
+  [[ ! $HOSTNAME =~ "vagrant" && $PWD =~ "vagrant" ]] && IDENT=$LIGHT_RED || IDENT=$LIGHT_GRAY
 
   # Set prompt
   #GIT_PROMPT_START=$VIMCHECK$IDENT$NO_COLOUR' \w'
