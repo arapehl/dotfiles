@@ -54,14 +54,14 @@ prompt_callback() {
   local NO_COLOUR="\[\033[0m\]"
 
   # Are we under vim?
-  [[ $UNDER_VIM = "yes" ]] && VIMCHECK="$LIGHT_RED[UNDER VIM]" || VIMCHECK=""
+  [[ $UNDER_VIM = "yes" ]] && VIM_CHECK="$LIGHT_RED[UNDER VIM]" || VIM_CHECK=""
 
   # Are we in a repo that should be running under vagrant?
-  [[ ! $HOSTNAME =~ "vagrant" && $PWD =~ "vagrant" ]] && IDENT=$LIGHT_RED || IDENT=$LIGHT_GRAY
+  [[ ! $HOSTNAME =~ "vagrant" && $PWD =~ "vagrant" ]] && VAGRANT_CHECK=$LIGHT_RED || VAGRANT_CHECK=$LIGHT_GRAY
 
   # Set prompt
   #GIT_PROMPT_START=$VIMCHECK$IDENT$NO_COLOUR' \w'
-  echo $VIMCHECK$IDENT' \w'$NO_COLOUR
+  echo $VIM_CHECK'[\h]'$VAGRANT_CHECK' \w'$NO_COLOUR
 }
 
 #opt into pry
