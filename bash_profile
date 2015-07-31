@@ -34,6 +34,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 prompt_callback() {
   # Colours
+  # https://github.com/magicmonty/bash-git-prompt
   local BLACK="\[\033[0;30m\]"
   local DARK_GRAY="\[\033[1;30m\]"
   local RED="\[\033[0;31m\]"
