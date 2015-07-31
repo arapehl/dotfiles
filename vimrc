@@ -24,6 +24,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'dietsche/vim-lastplace'
 Plugin 'AndrewRadev/undoquit.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'ngmy/vim-rubocop'
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
