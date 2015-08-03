@@ -88,6 +88,7 @@ set history=700
 
 " Make sure airline appears all the time
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -104,26 +105,41 @@ nmap <leader>w :w!<cr>
 nmap <leader>x :x<cr>
 
 " Fast quit
-nmap <leader>q :q<cr>
+" nmap <leader>q :q<cr>
+nmap <leader>q :bd<cr>
 
 nmap <leader>ggt :GitGutterLineHighlightsToggle<CR>
 
 " Tabs
-map <leader>1 :tabn 1<CR>
-map <leader>2 :tabn 2<CR>
-map <leader>3 :tabn 3<CR>
-map <leader>4 :tabn 4<CR>
-map <leader>5 :tabn 5<CR>
-map <leader>6 :tabn 6<CR>
-map <leader>7 :tabn 7<CR>
-map <leader>8 :tabn 8<CR>
-map <leader>9 :tabn 9<CR>
-map <leader>0 :tabnew<CR>
-map <leader>[ :tabp<CR>
-map <leader>] :tabn<CR>
+" map <leader>1 :tabn 1<CR>
+" map <leader>2 :tabn 2<CR>
+" map <leader>3 :tabn 3<CR>
+" map <leader>4 :tabn 4<CR>
+" map <leader>5 :tabn 5<CR>
+" map <leader>6 :tabn 6<CR>
+" map <leader>7 :tabn 7<CR>
+" map <leader>8 :tabn 8<CR>
+" map <leader>9 :tabn 9<CR>
+" map <leader>0 :tabnew<CR>
+" map <leader>[ :tabp<CR>
+" map <leader>] :tabn<CR>
+
+" Buffers
+map <leader>1 :b1<CR>
+map <leader>2 :b2<CR>
+map <leader>3 :b3<CR>
+map <leader>4 :b4<CR>
+map <leader>5 :b5<CR>
+map <leader>6 :b6<CR>
+map <leader>7 :b7<CR>
+map <leader>8 :b8<CR>
+map <leader>9 :b9<CR>
+map <leader>0 :new<CR>
+map <leader>[ :bp<CR>
+map <leader>] :bn<CR>
 
 " CtrlP
-map <leader>, :tabe<cr>:CtrlP<cr>
+map <leader>, :CtrlP<cr>
 
 " Easier start & end of line
 noremap H ^
