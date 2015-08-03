@@ -17,6 +17,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'hallison/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'ervandew/supertab'
@@ -26,7 +27,9 @@ Plugin 'AndrewRadev/undoquit.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jakedouglas/exuberant-ctags'
 Plugin 'craigemery/vim-autotag'
+Plugin 'majutsushi/tagbar'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'confirm-quit'
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
@@ -108,7 +111,8 @@ nmap <leader>x :x<cr>
 " nmap <leader>q :q<cr>
 nmap <leader>q :bd<cr>
 
-nmap <leader>ggt :GitGutterLineHighlightsToggle<CR>
+"Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " Tabs
 " map <leader>1 :tabn 1<CR>
