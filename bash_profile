@@ -88,5 +88,5 @@ if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
   source ~/.bash-git-prompt/gitprompt.sh
 fi
 
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/shims:$PATH"
+# eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/shims:$PATH"
