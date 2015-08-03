@@ -1,11 +1,13 @@
 #!/bin/bash
 
-alias b="bundle"
-alias be="bundle exec"
-alias best="bundle exec spring testunit"
-alias bi="bundle install --jobs 4"
-alias bo="bundle open"
-alias ga='git add'                                                                                                                                                                   
+alias b='bundle'
+alias be='bundle exec'
+alias best='bundle exec spring testunit'
+alias bi='bundle install --jobs 4'
+alias bo='bundle open'
+alias ct='ctags -R --languages=ruby --exclude=.git --exclude=log .'
+alias ctb='ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)'
+alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
 alias gcm='git commit -m'
@@ -28,7 +30,8 @@ alias vssh='cd ~/dev/work/vagrant; vagrant ssh'
 export EDITOR=vim
 
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:"/Applications/Postgres.app/Contents/Versions/9.4/bin"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -61,7 +64,7 @@ prompt_callback() {
 
   # Set prompt
   #GIT_PROMPT_START=$VIMCHECK$IDENT$NO_COLOUR' \w'
-  echo $VIM_CHECK'[\h]'$VAGRANT_CHECK' \w'$NO_COLOUR
+  echo $VIM_CHECK$NO_COLOUR'[\h]'$VAGRANT_CHECK' \w'$NO_COLOUR
 }
 
 #opt into pry
@@ -85,3 +88,5 @@ if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
   source ~/.bash-git-prompt/gitprompt.sh
 fi
 
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/shims:$PATH"
