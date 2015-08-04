@@ -23,7 +23,7 @@ alias rd="bundle exec rails dbconsole"
 alias rdb="bundle exec rails dbconsole"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
-alias v='vim -p $(git ls-files -m --others --exclude-standard)'
+alias v='vim $(git ls-files -m --others --exclude-standard)'
 alias vg="vagrant"
 alias vssh='cd ~/dev/work/vagrant; vagrant ssh'
 
