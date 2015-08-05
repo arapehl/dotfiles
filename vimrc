@@ -10,23 +10,21 @@ call vundle#begin()
 
 " Plugins
 Plugin 'gmarik/Vundle.vim'
-" Plugin 'Lokaltog/vim-distinguished'
-" Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'bling/vim-airline'
 "Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'pangloss/vim-javascript'
   " Plugin 'nathanaelkane/vim-indent-guides'
   " Plugin 'Raimondi/delimitMate'
-  " Plugin 'tpope/vim-fugitive'
-" Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 " Plugin 'hallison/vim-markdown'
-" Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
   " Plugin 'ervandew/supertab'
-" Plugin 'kien/ctrlp.vim'
-  " Plugin 'dietsche/vim-lastplace'
-  " Plugin 'AndrewRadev/undoquit.vim'
-" Plugin 'terryma/vim-multiple-cursors'
+Plugin 'kien/ctrlp.vim'
+Plugin 'terryma/vim-multiple-cursors'
   " Plugin 'jakedouglas/exuberant-ctags'
-" Plugin 'craigemery/vim-autotag'
+Plugin 'craigemery/vim-autotag'
 " Plugin 'majutsushi/tagbar'
   " Plugin 'ngmy/vim-rubocop'
 " Plugin 'confirm-quit'
@@ -70,7 +68,7 @@ set cursorline
 set t_Co=256
 syntax on
 set background=dark
-" colorscheme distinguished
+colorscheme distinguished
 
 set expandtab
 set smarttab
