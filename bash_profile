@@ -27,7 +27,7 @@ alias v='vi $(git ls-files -m --others --exclude-standard)'
 alias vg="vagrant"
 alias vssh='cd ~/dev/work/vagrant; vagrant ssh'
 
-export EDITOR=vim
+export EDITOR=vi
 
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
