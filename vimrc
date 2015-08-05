@@ -30,6 +30,7 @@ Plugin 'craigemery/vim-autotag'
 Plugin 'majutsushi/tagbar'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'confirm-quit'
+Plugin 'scrooloose/syntastic'
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
@@ -95,6 +96,20 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Set to auto read when a file is changed from the outside
 set autoread
+
+" Configure syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
+
+" Configure rubocop
+let g:vimrubocop_config = '~/dotfiles/rubocop.yml'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
