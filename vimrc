@@ -25,7 +25,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
   " Plugin 'jakedouglas/exuberant-ctags'
 Plugin 'craigemery/vim-autotag'
-" Plugin 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
   " Plugin 'ngmy/vim-rubocop'
 " Plugin 'confirm-quit'
   " Plugin 'scrooloose/syntastic'
@@ -120,26 +120,11 @@ nmap <leader>w :w!<cr>
 " Fast save & exit
 nmap <leader>x :x<cr>
 
-" Fast quit
-" nmap <leader>q :q<cr>
-nmap <leader>q :bd<cr>
+" Fast buffer destroy
+nmap <leader>d :bd<cr>
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
-
-" Tabs
-" map <leader>1 :tabn 1<CR>
-" map <leader>2 :tabn 2<CR>
-" map <leader>3 :tabn 3<CR>
-" map <leader>4 :tabn 4<CR>
-" map <leader>5 :tabn 5<CR>
-" map <leader>6 :tabn 6<CR>
-" map <leader>7 :tabn 7<CR>
-" map <leader>8 :tabn 8<CR>
-" map <leader>9 :tabn 9<CR>
-" map <leader>0 :tabnew<CR>
-" map <leader>[ :tabp<CR>
-" map <leader>] :tabn<CR>
 
 " Buffers
 map <leader>1 :b1<CR>
@@ -152,8 +137,8 @@ map <leader>7 :b7<CR>
 map <leader>8 :b8<CR>
 map <leader>9 :b9<CR>
 map <leader>0 :new<CR>
-map <leader>[ :bp<CR>
-map <leader>] :bn<CR>
+map <leader>m :bp<CR>
+map <leader>. :bn<CR>
 
 " CtrlP
 map <leader>, :CtrlP<cr>
