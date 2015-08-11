@@ -144,6 +144,7 @@ map <leader>. :bn<CR>
 " CtrlP
 map <leader>, :CtrlP<cr>
 map <leader>b :CtrlPBuffer<cr>
+map <leader>u :CtrlPMRU<cr>
 
 " Easier start & end of line
 noremap H ^
