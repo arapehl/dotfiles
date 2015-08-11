@@ -64,6 +64,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+set hidden "make sure to preserve undo history when switching buffers
 set cursorline
 set t_Co=256
 syntax on
