@@ -90,3 +90,6 @@ fi
 
 # eval "$(rbenv init -)"
 # export PATH="$HOME/.rbenv/shims:$PATH"
+
+export NVM_DIR="/Users/ara/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
