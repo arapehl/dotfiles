@@ -19,6 +19,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'craigemery/vim-autotag'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'mxw/vim-jsx'
 " Plugin 'majutsushi/tagbar'
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
@@ -105,6 +106,12 @@ set autoread
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
+
+" Window left, right, down, up
+nmap <c-h> <c-w><left>
+nmap <c-l> <c-w><right>
+nmap <c-j> <c-w><down>
+nmap <c-k> <c-w><up>
 
 " Fast save
 nmap <leader>w :w!<cr>
