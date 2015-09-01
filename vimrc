@@ -78,6 +78,9 @@ set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
 " notify whether or not bash is running under vim or not
 let $UNDER_VIM="yes"
 
+" Set ctrlp to ignore files in .gitignore
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 " Sets how many lines of history VIM has to remember
 set history=700
 
