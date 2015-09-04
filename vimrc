@@ -110,6 +110,9 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
+" Open up QuickFix window after running Fugitive's Ggrep
+autocmd QuickFixCmdPost *grep* cwindow
+
 " Window left, right, down, up
 nmap <c-h> <c-w><left>
 nmap <c-l> <c-w><right>
