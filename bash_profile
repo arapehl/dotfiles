@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias afterpull='bi; rake db:migrate; ctb'
 alias b='bundle'
 alias be='bundle exec'
 alias best='bundle exec spring testunit'
