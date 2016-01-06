@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias afterpull='bi; rake db:migrate; ctb'
+alias afterpull='bi; db; ctb'
 alias b='bundle'
 alias be='bundle exec'
 alias best='bundle exec spring testunit'
@@ -8,6 +8,7 @@ alias bi='bundle install --jobs 4'
 alias bo='bundle open'
 alias ct='ctags -R --languages=ruby --exclude=.git --exclude=log .'
 alias ctb='ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)'
+alias db='be rake db:migrate; be rake lhm:run:all; be rake db:test:clone; be rake db:test:prepare'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
@@ -24,6 +25,7 @@ alias rd="bundle exec rails dbconsole"
 alias rdb="bundle exec rails dbconsole"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
+alias usm="git pull origin master; afterpull"
 alias v='vi $(git ls-files -m --others --exclude-standard)'
 alias vg="vagrant"
 alias vssh='cd ~/dev/work/vagrant; vagrant ssh'
