@@ -73,6 +73,9 @@ prompt_callback() {
 #opt into pry
 export PRY=1
 
+#bye bye turbo bar
+export TDD=0
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 if [ -f ~/.git-completion.bash ]; then
