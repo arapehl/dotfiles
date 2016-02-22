@@ -21,6 +21,7 @@ alias gp='git push'
 alias gr='git rebase'
 alias gs='git status'
 alias ls="ls -lahG"
+alias morning="gco master; git pull origin master; afterpull"
 alias rd="bundle exec rails dbconsole"
 alias rdb="bundle exec rails dbconsole"
 alias rs="bundle exec rails server"
