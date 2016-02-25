@@ -20,6 +20,7 @@ alias gl='git log'
 alias gp='git push'
 alias gr='git rebase'
 alias gs='git status'
+alias gss='git stash show -p stash@{0}'
 alias ls="ls -lahG"
 alias morning="gco master; git pull origin master; afterpull"
 alias rd="bundle exec rails dbconsole"
