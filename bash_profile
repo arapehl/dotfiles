@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias afterpull='bi; db; ctb'
+alias afterpull='bin/bootstrap; db; ctb'
 alias b='bundle'
 alias be='bundle exec'
 alias bet='bundle exec ruby -Itest'
