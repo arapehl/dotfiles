@@ -101,3 +101,7 @@ fi
 
 export NVM_DIR="/Users/ara/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+if  [[ $HOSTNAME =~ "vagrant" ]]; then
+  cd ~/src/shopify
+fi
