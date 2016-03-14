@@ -101,3 +101,6 @@ fi
 
 export NVM_DIR="/Users/ara/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+PATH="~/.themekit:$PATH"
