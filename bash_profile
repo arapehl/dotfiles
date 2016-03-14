@@ -104,3 +104,7 @@ export NVM_DIR="/Users/ara/.nvm"
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 PATH="~/.themekit:$PATH"
+
+if  [[ $HOSTNAME =~ "vagrant" ]]; then
+  cd ~/src/shopify
+fi
