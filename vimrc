@@ -12,14 +12,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-rails'
 Plugin 'kien/ctrlp.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'craigemery/vim-autotag'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'FelikZ/ctrlp-py-matcher'
+Plugin 'kchmck/vim-coffee-script'
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
