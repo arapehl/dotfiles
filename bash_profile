@@ -36,8 +36,7 @@ alias vssh='cd ~/dev/work/vagrant; vagrant ssh'
 
 export EDITOR=vi
 
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:"/Applications/Postgres.app/Contents/Versions/9.4/bin"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -79,8 +78,6 @@ export PRY=1
 
 #bye bye turbo bar
 export TDD=0
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
