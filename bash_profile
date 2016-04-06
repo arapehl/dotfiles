@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias afterpull='bin/bootstrap; db; ctb'
+alias afterpull='dev up; ctb'
 alias b='bundle'
 alias be='bundle exec'
 alias bet='bundle exec ruby -Itest'
@@ -24,7 +24,7 @@ alias gs='git status'
 alias gss='git stash show -p stash@{0}'
 alias jst='bin/teaspoon'
 alias ls="ls -lahG"
-alias morning="dev cd shopify; dev up; gco master; git pull origin master; afterpull"
+alias morning="dev cd shopify; dev down; dev up; gco master; git pull origin master; dev up; ctb"
 alias rd="bundle exec rails dbconsole"
 alias rdb="bundle exec rails dbconsole"
 alias rs="bundle exec rails server"
