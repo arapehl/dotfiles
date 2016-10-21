@@ -11,6 +11,7 @@ alias ctb='ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle lis
 alias db='be rake db:migrate; be rake lhm:run:all; be rake db:test:clone; be rake db:test:prepare'
 alias dcd='dev cd'
 alias devup='cd ~/src/github.com/Shopify/shopify; dev up'
+alias die='kill -KILL $(cat tmp/pids/server.pid)'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
