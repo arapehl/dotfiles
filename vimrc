@@ -19,6 +19,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'isRuslan/vim-es6'
+Plugin 'elzr/vim-json'
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
