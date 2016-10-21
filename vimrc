@@ -4,6 +4,9 @@ filetype off                  " required
 " Set visual marker at 120 chars
 set colorcolumn=120
 
+" show search results as typed
+set incsearch
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
