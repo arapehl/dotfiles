@@ -1,6 +1,7 @@
 #!/bin/bash
 
 alias afterpull='dev up; ctb'
+alias a='atom $(git ls-files -m --others --exclude-standard)'
 alias b='bundle'
 alias be='bundle exec'
 alias bet='bundle exec ruby -Itest'
