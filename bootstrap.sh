@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-# Aliases
-alias ls="ls -lhFGA --color=always --group-directories-first"
-
-# Git
+# Link files
+ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/gitconfig ~/.gitconfig
