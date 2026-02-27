@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+
+if [ -z "$1" ]; then
+  echo "Usage: create-app <project-name>"
+  exit 1
+fi
+
+PROJECT_NAME=$1
+GITHUB_USER=$(git config --global user.login 2>/dev/null || echo "arapehl")
+TEMPLATE_REPO="arapehl/app-template"
+
+echo "🚀 Creating new project: $PROJECT_NAME"
+
+# Create a new GitHub repo from the template
+gh repo create "$GITHUB_USER/$PROJECT_NAME" \
+  --template "$TEMPLATE_REPO" \
+  --private \
+  --clone
+
+cd "$PROJECT_NAME"
+
+echo "📦 Installing dependencies..."
+pnpm install
+
+echo "✅ Done! Your new project is ready at ~/$PROJECT_NAME"
+echo "To get started:"
+echo "  cd $PROJECT_NAME"
+echo "  pnpm dev"
