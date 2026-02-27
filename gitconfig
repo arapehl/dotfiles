@@ -1,3 +1,5 @@
+[init]
+    defaultBranch = main
 [core]
 	commitGraph = true
 	editor = code --wait
