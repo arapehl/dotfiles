@@ -1,4 +1,7 @@
-#!/bin/zsh
+#!/bin/bash
+
+# Ensure zsh is installed
+sudo apt-get update -y && sudo apt-get install -y zsh curl
 
 # Install software
 source ./install.zsh
