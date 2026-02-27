@@ -6,3 +6,5 @@ source ~/.zsh/aliases.zsh
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/macos.zsh
 fi
+
+export PATH="$HOME/dotfiles/scripts:$PATH"
