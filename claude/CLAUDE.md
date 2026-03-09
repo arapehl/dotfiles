@@ -86,6 +86,7 @@
 
 ### React (Frontend)
 - Never use `dangerouslySetInnerHTML` with untrusted data; sanitize with `DOMPurify` if HTML rendering is required. Plain-text fields must never be rendered as HTML — use `whitespace-pre-wrap` instead.
+- Any `<button>` element styled to look like a link (text-only color, no background/border/rounded) must include the `cursor-pointer` Tailwind class. Browsers do not apply `cursor: pointer` to `<button>` by default in all contexts.
 - Never store tokens, session info, or PII in `localStorage` or `sessionStorage`.
 - Store auth tokens in memory (React state/context); use HttpOnly cookies for refresh tokens.
 - Treat all URL and route params as untrusted input — validate and sanitize before use.
@@ -136,6 +137,7 @@
 - Never commit directly to `main`. All changes go through a branch linked to a GitHub issue.
 - Every PR must include tests. PRs without tests will not be merged.
 - PRs should be small and focused; descriptions must close the related issue(s).
+- **Every PR description must include an OWASP Top 10 review section.** For each of the 10 categories, note whether it is applicable to the change and, if so, how it is addressed. Mark categories explicitly as N/A when they do not apply — do not omit them. The CI `Security (OWASP)` workflow will warn if the PR body contains no OWASP reference.
 
 ### Security Checklist (Before → During → Ship)
 - **Before**: Identify trust boundaries; perform lightweight STRIDE threat modeling for features touching auth, data, or external systems; define acceptance criteria that include security requirements.
