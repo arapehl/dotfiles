@@ -121,6 +121,16 @@
 
 ### Code Quality
 - Run `eslint --fix` on every file after making changes to it.
+- **Component/page structure**: Any page or component that contains subcomponents must live in a folder named after itself (e.g., `pages/CandidateDetailPage/CandidateDetailPage.tsx`), with subcomponents in a `components/` subdirectory alongside it, and an `index.ts` at the folder root that re-exports the main component. Simple leaf components with no subcomponents may remain as single files.
+- **GraphQL file co-location**: `.graphql` files must live in a `graphql/` subfolder inside the folder of the `.tsx` file that primarily consumes them — not in a shared top-level `graphql/` directory. A query or mutation used by a single page lives in that page's `graphql/` folder (e.g., `pages/CandidateDetailPage/graphql/Candidate.graphql`). A query used by a component inside a page's `components/` subfolder lives in that component subfolder's `graphql/` directory (e.g., `pages/OpportunityDetailPage/components/graphql/CreatePipelineStage.graphql`). When a query is shared across multiple consumers, place it with its primary consumer and import it via a relative path from the secondary consumers.
+- **Test file co-location**: `.test.tsx` files must live next to the `.tsx` file they test — not in a separate `__tests__/` directory.
+
+### Testing with Apollo MockedProvider
+- **Always mock every query a component tree fires** — including queries from child components. A `MockedProvider mocks={[]}` on a component that fires any query will produce "No more mocked responses" warnings and `act(...)` warnings.
+- **Match variables exactly** — Apollo's mock matcher uses deep equality on request variables. Derive the expected variables from how the component calls `useQuery` (e.g., `undefined` values are stripped, so `{ search: undefined }` becomes `{}`).
+- **Shared query mocks** — define named mock constants at the top of the test file (e.g., `const tagsMock = { request: ..., result: ... }`) and reuse them across tests rather than inlining per test.
+- **Refetch / mutation side-effects** — if a mutation triggers a query refetch, provide a second copy of that query's mock. Unused extra mocks are silently ignored; missing mocks produce warnings.
+- **Subcomponent queries** — when a page renders a subcomponent that fires its own query (e.g., `RecommendedCandidatesPanel`), add that subcomponent's query mock to every test that renders the parent page.
 
 ### Branching & Pull Requests
 - Never commit directly to `main`. All changes go through a branch linked to a GitHub issue.
