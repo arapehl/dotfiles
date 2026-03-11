@@ -102,7 +102,7 @@
 - Return generic error messages to clients in production; log full errors server-side.
 - Enforce field-level and resolver-level authorization — parent resolution does not imply child access.
 - Validate and sanitize all GraphQL arguments with `zod` before passing to business logic or the database. **TypeScript type casts (`as SomeType`) are not runtime validation** — always use `z.parse()`/`z.safeParse()` for enum fields such as user roles.
-- Strip HTML from plain-text fields on the server before storage as defense-in-depth (`replace(/<[^>]*>/g, '')`), even if the frontend already treats them as plain text.
+- Strip HTML from plain-text fields on the server before storage as defense-in-depth using **`sanitize-html` with `{ allowedTags: [], allowedAttributes: {} }`** (already a project dependency in `apps/api`). Never use a hand-rolled regex like `replace(/<[^>]*>/g, '')` — CodeQL flags these as `incomplete-multi-character-sanitization` (High severity) and they miss edge cases such as incomplete tags.
 - Use `DataLoader` to batch and cache database calls — uncontrolled N+1 queries are a data-exfiltration risk.
 - Use persisted queries in production to lock the API to approved operations.
 - Disable the GraphQL playground in production.
