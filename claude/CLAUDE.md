@@ -133,6 +133,9 @@
 - **Refetch / mutation side-effects** — if a mutation triggers a query refetch, provide a second copy of that query's mock. Unused extra mocks are silently ignored; missing mocks produce warnings.
 - **Subcomponent queries** — when a page renders a subcomponent that fires its own query (e.g., `RecommendedCandidatesPanel`), add that subcomponent's query mock to every test that renders the parent page.
 
+### Seeded Demo Data
+- Any feature that touches the database must ship with seed data for `@example.com` accounts in both dev and production, so the product can be demoed end-to-end without manual setup.
+
 ### Branching & Pull Requests
 - Never commit directly to `main`. All changes go through a branch linked to a GitHub issue.
 - Every PR must include tests. PRs without tests will not be merged.
