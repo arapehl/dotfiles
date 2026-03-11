@@ -107,6 +107,11 @@
 - Use persisted queries in production to lock the API to approved operations.
 - Disable the GraphQL playground in production.
 
+### Drizzle ORM
+- **Always generate a migration after editing the schema.** Any change to `src/db/schema/*.ts` must be followed immediately by `drizzle-kit generate` and committing both the new `.sql` file and the updated `meta/_journal.json`. Pushing schema changes without a migration causes runtime query failures (column not found) in any environment — including production.
+- Migrations must be reviewed before merge: confirm they are additive (`ADD COLUMN`, `CREATE TABLE`) or safe destructive (`DROP COLUMN` only when column is no longer referenced in code). Never drop a column that code still queries.
+- Use `ADD COLUMN IF NOT EXISTS` / `CREATE TABLE IF NOT EXISTS` so migrations are idempotent and re-runnable.
+
 ### PostgreSQL
 - Connect as a dedicated app user with minimum required privileges — never a superuser.
 - Grant only needed permissions (`SELECT`, `INSERT`, `UPDATE`, `DELETE` on specific tables). Never `GRANT ALL ON DATABASE`.
