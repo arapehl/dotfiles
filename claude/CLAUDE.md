@@ -93,6 +93,7 @@
 - Never embed secrets or API keys in the client bundle.
 - Use `VITE_` / `REACT_APP_` env vars only for non-sensitive, public configuration.
 - Define a strict `Content-Security-Policy` disallowing inline scripts and restricting script sources.
+- **Mobile-first**: every new page and component must be usable on small screens. Use Tailwind responsive prefixes (`sm:`, `md:`) rather than fixed widths. Tables must have `overflow-x-auto` wrappers; hide secondary columns on mobile with `hidden sm:table-cell`. Navigation components must have a mobile fallback (hamburger menu or horizontal tab strip).
 
 ### GraphQL
 - **Disable introspection in production.**
