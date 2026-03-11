@@ -141,6 +141,7 @@
 - Never commit directly to `main`. All changes go through a branch linked to a GitHub issue.
 - Every PR must include tests. PRs without tests will not be merged.
 - PRs should be small and focused; descriptions must close the related issue(s).
+- **If a PR adds or changes user-facing features, update the relevant help guide(s) in `apps/web/src/pages/HelpPage/components/`.** New pages require a new guide file and a sidebar entry in `HelpSidebar.tsx`.
 - **Every PR description must include an OWASP Top 10 review section.** For each of the 10 categories, note whether it is applicable to the change and, if so, how it is addressed. Mark categories explicitly as N/A when they do not apply — do not omit them. The CI `Security (OWASP)` workflow will warn if the PR body contains no OWASP reference.
 
 ### Security Checklist (Before → During → Ship)
